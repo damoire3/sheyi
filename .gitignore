@@ -1,0 +1,17 @@
+# Dépendances et build
+node_modules
+dist
+
+# Variables d'environnement et fichiers locaux
+.env
+.env.*
+*.local
+
+# Système et éditeur
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Déploiement
+.vercel
+

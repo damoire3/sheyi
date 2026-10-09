@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F1EBFD">
+  <title>Le décret royal de Sheyi</title>
+  <meta name="description" content="Décret royal : une mission secrète vous attend, le premier anniversaire de Sheyi">
+
+  <!-- Aperçu du lien (WhatsApp, Messenger, SMS...). Fichier : public/assets/og-image.png (1200x630) -->
+  <meta property="og:title" content="Le décret royal de Sheyi">
+  <meta property="og:description" content="Une mission secrète vous attend. Brisez le sceau.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Le décret royal de Sheyi">
+  <meta name="twitter:description" content="Une mission secrète vous attend. Brisez le sceau.">
+  <meta name="twitter:image" content="/assets/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="float-layer" id="floatLayer" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- ÉCRAN 1 : LE DÉCRET ROYAL SCELLÉ -->
+  <section class="intro" id="intro" aria-label="Décret royal">
+    <div class="intro-card">
+      <span class="stamp stamp-intro">Accès royal</span>
+      <p class="intro-line" data-bind="intro.question"></p>
+
+      <button class="envelope" id="envelope" type="button" aria-label="Briser le sceau">
+        <span class="env-back"></span>
+        <span class="letter">
+          <span class="letter-tag">DÉCRET N°1</span>
+          <span class="letter-name" data-bind="name"></span>
+          <span class="letter-sub">Princesse agent</span>
+        </span>
+        <span class="env-front"></span>
+        <span class="env-flap"></span>
+        <span class="seal" data-icon="crown" aria-hidden="true"></span>
+      </button>
+
+      <p class="intro-hint" data-bind="intro.cta"></p>
+    </div>
+  </section>
+
+  <!-- ÉCRAN 2 : LE VERROU (le décret ne s'ouvre qu'après le mystère de l'âge) -->
+  <section class="gate" id="gate" aria-label="Verrou royal">
+    <img class="gate-bg" src="/assets/photos/photo23.jpg" alt="">
+
+    <div class="gate-card">
+      <span class="stamp stamp-intro">Verrou royal</span>
+      <p class="gate-q" data-bind="gate.question"></p>
+      <form class="gate-form" id="gateForm" novalidate>
+        <input type="text" id="gateInput" autocomplete="off" placeholder="Votre réponse" aria-label="Votre réponse">
+        <button class="btn btn-primary" type="submit" id="gateSubmit">Déverrouiller</button>
+      </form>
+      <p class="gate-msg" id="gateMsg" aria-live="polite"></p>
+      <p class="gate-hint is-hidden" id="gateHint" data-bind="gate.hint"></p>
+    </div>
+  </section>
+
+  <!-- ÉCRAN 3 : LE PALAIS (le décret) -->
+  <main class="site" id="site">
+
+    <header class="hero" id="top">
+      <nav class="topbar" aria-label="Navigation">
+        <span class="brand"><b data-bind="name"></b> · Altesse 1 an</span>
+        <div class="navlinks">
+          <a href="#details">Décret</a>
+          <a href="#agent">Princesse</a>
+          <a href="#programme">Protocole</a>
+          <a href="#photos">Archives</a>
+          <a href="#contact">Réponse</a>
+        </div>
+      </nav>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="stamp">Sa Majesté vous convoque</span>
+          <p class="eyebrow">Couronnement</p>
+          <h1 class="hero-title">
+            <span data-bind="hero.title"></span>
+            <span class="gold">1 an</span>
+          </h1>
+          <p class="hero-sub" data-bind="hero.subtitle"></p>
+          <p class="hero-text" data-bind="hero.text"></p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Répondre au décret <span class="btn-icon" data-icon="arrow-right"></span></a>
+            <a class="btn btn-ghost" href="#details">Lire le décret</a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <img class="hero-dossier" src="/assets/photos/photo22.jpg" alt="Sheyi">
+          <span class="chip c1"><span class="chip-icon" data-icon="crown"></span>Altesse requise</span>
+          <span class="chip c2"><span class="chip-icon" data-icon="sparkle"></span>Charme royal</span>
+          <span class="chip c3"><span class="chip-icon" data-icon="cake"></span>Gâteau royal</span>
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#details" aria-label="Lire le décret">
+        <span data-icon="chevron-down"></span>
+      </a>
+    </header>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+
+    <!-- LE DÉCRET : DATE, HEURE, LIEU -->
+    <section class="section" id="details">
+      <h2 class="section-title reveal">📅 Le décret du grand jour</h2>
+      <div class="info-grid">
+        <article class="info-card reveal">
+          <span class="info-icon" data-icon="calendar"></span>
+          <span class="info-label">DATE</span>
+          <span class="info-value" data-bind="event.date"></span>
+        </article>
+        <article class="info-card reveal">
+          <span class="info-icon" data-icon="clock"></span>
+          <span class="info-label">HEURE</span>
+          <span class="info-value" data-bind="event.time"></span>
+        </article>
+        <article class="info-card reveal">
+          <span class="info-icon" data-icon="map-pin"></span>
+          <span class="info-label">LIEU</span>
+          <span class="info-value" data-bind="event.location"></span>
+        </article>
+        <article class="info-card reveal">
+          <span class="info-icon" data-icon="map"></span>
+          <span class="info-label">ADRESSE</span>
+          <span class="info-value" data-bind="event.address"></span>
+        </article>
+      </div>
+      <div class="reveal center-row">
+        <a class="btn btn-ghost" id="mapLink" href="#" target="_blank" rel="noopener">
+          <span class="btn-icon" data-icon="map-pin"></span>Voir le palais
+        </a>
+      </div>
+    </section>
+
+    <!-- JEU 1 : LE COFFRE SECRET (à gauche) -->
+    <section class="section game-section align-left" id="game-safe">
+      <h2 class="section-title reveal">🔒 Le coffre secret</h2>
+      <p class="section-sub reveal" data-bind="games.safe.clue"></p>
+      <div class="game-card game-solo reveal">
+        <div class="safe-dials" id="safeDials"></div>
+        <button class="btn btn-primary btn-block" type="button" id="safeOpen">Ouvrir le coffre</button>
+        <p class="game-msg-inline" id="safeMsg" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- FICHE DE LA PRINCESSE -->
+    <section class="section" id="agent">
+      <h2 class="section-title reveal">👑 Fiche de la princesse</h2>
+      <div class="agent-grid">
+        <div class="agent-card reveal">
+          <div class="agent-head">
+            <span class="stamp stamp-small">Altesse</span>
+            <span class="agent-number">DÉCRET #001</span>
+          </div>
+          <div class="agent-body">
+            <figure class="polaroid tilt-l agent-photo">
+              <div class="photo-frame" id="agentPhoto"></div>
+            </figure>
+            <dl class="agent-fields">
+              <div><dt>Nom</dt><dd data-bind="agent.name"></dd></div>
+              <div><dt>Titre</dt><dd data-bind="agent.codename"></dd></div>
+              <div><dt>Âge</dt><dd data-bind="agent.age"></dd></div>
+              <div><dt>Talent</dt><dd data-bind="agent.specialty"></dd></div>
+              <div><dt>Pouvoir royal</dt><dd data-bind="agent.power"></dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="agent-stats reveal" id="agentStats"></div>
+      </div>
+    </section>
+
+    <!-- LE ROYAUME EN MOTS -->
+    <section class="section words-section" id="words">
+      <h2 class="section-title reveal" data-bind="sectionTitles.words"></h2>
+      <div class="words-cloud" id="wordsCloud"></div>
+    </section>
+
+    <!-- BRIEFING DU COURONNEMENT -->
+    <section class="section about" id="about">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="eyebrow">Premier anniversaire</p>
+          <h2 data-bind="about.title"></h2>
+          <p class="about-lead" data-bind="about.lead"></p>
+          <p data-bind="about.text"></p>
+          <ul class="checklist" id="aboutBullets"></ul>
+        </div>
+        <div class="about-visual reveal">
+          <div class="blob">
+            <img src="/assets/photos/photo3.jpg" alt="" class="blob-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDÉO -->
+    <section class="section" id="video">
+      <h2 class="section-title reveal" data-bind="video.title"></h2>
+      <p class="section-sub reveal" data-bind="video.caption"></p>
+      <div class="video-frame reveal" id="videoFrame"></div>
+    </section>
+
+    <!-- UNE JOURNÉE SPÉCIALE -->
+    <section class="section" id="story">
+      <div class="story">
+        <div class="story-text reveal">
+          <h2 data-bind="story.title"></h2>
+          <p data-bind="story.text"></p>
+        </div>
+        <div class="story-visual reveal">
+          <figure class="polaroid tilt-l">
+            <div class="photo-frame" id="storyFrame"></div>
+          </figure>
+          <span class="sticker s1" data-icon="crown" aria-hidden="true"></span>
+          <span class="sticker s2" data-icon="moon" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- JEU 2 : LE PUZZLE ROYAL (à droite) -->
+    <section class="section game-section align-right" id="game-puzzle">
+      <h2 class="section-title reveal" data-bind="puzzle.title"></h2>
+      <p class="section-sub reveal" data-bind="puzzle.intro"></p>
+      <div class="game-card game-solo reveal">
+        <div class="puzzle-grid" id="puzzleGrid"></div>
+        <p class="game-stats"><span>Coups : <b id="puzzleMoves">0</b></span></p>
+        <p class="game-msg-inline" id="puzzleMsg" aria-live="polite"></p>
+        <button class="btn btn-ghost btn-block" type="button" id="puzzleReset">Mélanger</button>
+      </div>
+    </section>
+
+    <!-- TROIS MOMENTS -->
+    <section class="section" id="moments">
+      <h2 class="section-title reveal" data-bind="moments.title"></h2>
+      <div class="moments" id="momentsList"></div>
+    </section>
+
+    <!-- JEU 3 : MÉMOIRE ROYALE (à gauche) -->
+    <section class="section game-section align-left" id="game-memory">
+      <h2 class="section-title reveal">🧠 Mémoire royale</h2>
+      <p class="section-sub reveal">Retrouvez les 8 paires de symboles cachés.</p>
+      <div class="game-card game-solo reveal">
+        <div class="game-stats">
+          <span>Coups : <b id="memoryMoves">0</b></span>
+        </div>
+        <div class="memory-grid" id="memoryGrid"></div>
+        <p class="game-msg-inline" id="memoryMsg" aria-live="polite"></p>
+        <button class="btn btn-ghost btn-block" type="button" id="memoryReset">Mélanger les cartes</button>
+      </div>
+    </section>
+
+    <!-- COMPTE À REBOURS -->
+    <section class="section" id="countdown">
+      <h2 class="section-title reveal">⏳ Temps restant avant le couronnement</h2>
+      <div class="countdown reveal" id="countdownBox">
+        <div class="cd-unit"><span class="cd-num" id="cdDays">--</span><span class="cd-label">JOURS</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cdHours">--</span><span class="cd-label">HEURES</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cdMinutes">--</span><span class="cd-label">MINUTES</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cdSeconds">--</span><span class="cd-label">SECONDES</span></div>
+      </div>
+      <p class="cd-done is-hidden" id="cdDone">👑 Le couronnement commence !</p>
+    </section>
+
+    <!-- PROTOCOLE -->
+    <section class="section" id="programme">
+      <h2 class="section-title reveal" data-bind="programme.title"></h2>
+      <p class="section-sub reveal" data-bind="programme.intro"></p>
+      <ol class="timeline" id="schedule"></ol>
+    </section>
+
+    <!-- PROCLAMATIONS -->
+    <section class="section" id="quotes">
+      <h2 class="section-title reveal" data-bind="quotes.title"></h2>
+      <div class="quotes-list" id="quotesList"></div>
+    </section>
+
+    <!-- BANQUET -->
+    <section class="section" id="menu">
+      <h2 class="section-title reveal" data-bind="menu.title"></h2>
+      <p class="section-sub reveal" data-bind="menu.intro"></p>
+      <div class="cards-4" id="menuList"></div>
+    </section>
+
+    <!-- DIVERTISSEMENTS -->
+    <section class="section" id="activities">
+      <h2 class="section-title reveal" data-bind="activities.title"></h2>
+      <p class="section-sub reveal" data-bind="activities.intro"></p>
+      <div class="cards-4" id="activitiesList"></div>
+    </section>
+
+    <!-- TENUE DE COUR -->
+    <section class="section" id="dresscode">
+      <div class="dresscode reveal">
+        <h2 class="section-title" data-bind="dresscode.title"></h2>
+        <p class="section-sub" data-bind="dresscode.text"></p>
+        <div class="swatches" id="swatches"></div>
+      </div>
+    </section>
+
+    <!-- POINTS FORTS -->
+    <section class="section" id="features">
+      <h2 class="section-title reveal" data-bind="sectionTitles.features"></h2>
+      <div class="cards-3" id="featuresList"></div>
+    </section>
+
+    <!-- ARCHIVES -->
+    <section class="section" id="photos">
+      <h2 class="section-title reveal" data-bind="sectionTitles.photos"></h2>
+      <div class="photo-grid" id="photoGrid"></div>
+    </section>
+
+    <!-- PRÉSENTS -->
+    <section class="section" id="gifts">
+      <div class="gifts-card reveal">
+        <img src="/assets/photos/photo12.jpg" alt="" class="gifts-img">
+        <h2 data-bind="gifts.title"></h2>
+        <p data-bind="gifts.text"></p>
+      </div>
+    </section>
+
+    <!-- LA COUR -->
+    <section class="section partners" id="partners">
+      <p class="partners-label reveal" data-bind="sectionTitles.partners"></p>
+      <div class="partners-row reveal" id="partnersList"></div>
+    </section>
+
+    <!-- RÉPONSE AU DÉCRET -->
+    <section class="section" id="contact">
+      <div class="rsvp-card reveal">
+        <h2 data-bind="form.title"></h2>
+        <p class="form-intro" data-bind="form.text"></p>
+
+        <form class="rsvp-form" id="rsvpForm" novalidate>
+          <label class="field">
+            <span>Votre prénom et nom *</span>
+            <input type="text" name="nom" required autocomplete="name" placeholder="Ex. Aïcha Koffi">
+          </label>
+
+          <label class="field">
+            <span>Téléphone / WhatsApp</span>
+            <input type="tel" name="telephone" autocomplete="tel" placeholder="Ex. +229 00 00 00 00">
+          </label>
+
+          <fieldset class="field">
+            <legend>Votre réponse *</legend>
+            <div class="radio-row">
+              <label class="radio-pill">
+                <input type="radio" name="presence" value="oui" checked>
+                <span><span class="radio-icon" data-icon="check"></span>Je serai là, Altesse</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="presence" value="non">
+                <span>Je ne pourrai pas venir</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="field">
+            <span>Nombre de sujets</span>
+            <select name="personnes">
+              <option value="1">1 sujet</option>
+              <option value="2">2 sujets</option>
+              <option value="3">3 sujets</option>
+              <option value="4">4 sujets</option>
+              <option value="5">5 sujets ou plus</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Un message pour la princesse ?</span>
+            <textarea name="message" rows="3" maxlength="500" placeholder="Vos vœux pour sa première année..."></textarea>
+          </label>
+
+          <p class="form-error" id="formError" role="alert"></p>
+
+          <button class="btn btn-primary btn-block" type="submit" id="formSubmit">
+            <span class="btn-icon" data-icon="send"></span>Envoyer ma réponse
+          </button>
+        </form>
+
+        <p class="rsvp-thanks" id="formThanks" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- FIN DU COURONNEMENT -->
+    <footer class="site-footer">
+      <div class="mission-end">
+        <span class="stamp stamp-big">Couronnement accompli</span>
+        <p class="mission-end-text" data-bind="footer"></p>
+        <p class="mission-end-sign">À très bientôt, Altesse <b data-bind="name"></b> 👑</p>
+      </div>
+    </footer>
+  </main>
+
+  <button class="music-btn" id="musicBtn" type="button" aria-label="Lancer la musique"><span data-icon="mute"></span></button>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
