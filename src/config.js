@@ -38,15 +38,15 @@ Venez avec votre sourire, votre bonne humeur et votre appétit pour le gâteau r
     "Sujets requis : tous",
     "Gâteau royal"
   ],
-
+  
   // Informations de la mission
-  event: {
-    date: "06/11/2026",
-    time: "16h00",
-    location: "Bénin Abomey-Calavi, Djadjo Von du poulailler, non loin du bar Chez Arès.",
-    address: "--",
-    mapUrl: "https://maps.app.goo.gl/U16m1VsmZBRx2yqD6?g_st=aw"  // ex. "https://maps.google.com/?q=..." — vide = bouton masqué
-  },
+ event: {
+  date: "06/11/2026",
+  time: "16h00",
+  location: "Abomey-Calavi, Bénin",
+  address: "Djadjo Von, près du poulailler, non loin du bar Chez Arès",
+  mapUrl: "https://maps.app.goo.gl/U16m1VsmZBRx2yqD6?g_st=aw",
+},
 
   // Fiche de la princesse agent
   agent: {
@@ -54,7 +54,7 @@ Venez avec votre sourire, votre bonne humeur et votre appétit pour le gâteau r
     codename: "Princesse de la cour",
     age: "1 an",
     specialty: "Faire fondre les cœurs d'un seul sourire",
-    power: `Transformer n'importe quelle pièce en palais (Casse tout "visage souriant avec une main sur la boucje" )`,
+    power: `Transformer n'importe quelle pièce en palais (Casse tout "🤭")`,
     photo: "/assets/photos/princesse1.jpeg" // photo de Sheyi (public/assets/photos/)
   },
 
@@ -62,8 +62,8 @@ Venez avec votre sourire, votre bonne humeur et votre appétit pour le gâteau r
   agentStats: [
     { label: "Charme royal", value: 100 },
     { label: "Gentillesse", value: 100 },
-    { label: "Amour du gâteau", value: 100 },
-    { label: "Douce", value: 85 },
+    { label: "Amour du gâteau", value: 90 },
+    { label: "Douce", value: 75 },
     { label: "Excitation", value: 100 }
   ],
 
@@ -140,7 +140,7 @@ Venez avec votre sourire, votre bonne humeur et votre appétit pour le gâteau r
       { name: "Blanc", hex: "#FFFFFF" },
       { name: "Or", hex: "#C9A227" },
       { name: "Violet royal", hex: "#5B3F94" },
-      { name: "Champagne", hex: "#F7EDCB" }
+      { name: "Beige", hex: "#f9eab8" }
     ]
   },
 

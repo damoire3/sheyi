@@ -545,6 +545,7 @@ function setupCountdown() {
 function setupForm() {
   const form = $('#rsvpForm');
   if (!form) return;
+  const card = form.closest('.rsvp-card');
   const errorEl = $('#formError');
   const thanks = $('#formThanks');
   const submit = $('#formSubmit');
@@ -566,7 +567,7 @@ function setupForm() {
       presence: data.presence,
       personnes: data.personnes,
       message: (data.message || '').trim(),
-      envoye_le: new Date().toISOString()
+      envoye_le: new Date().toISOString(),
     };
 
     const endpoint = get('form.endpoint');
@@ -578,19 +579,22 @@ function setupForm() {
         const res = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(payload)
+          body: JSON.stringify(payload),
         });
         if (!res.ok) throw new Error('HTTP ' + res.status);
       }
+
+      // Après l'envoi : on retire le titre, le texte et le formulaire
+      card.querySelectorAll('h2, .form-intro').forEach((el) => el.classList.add('is-hidden'));
       form.classList.add('is-hidden');
       thanks.textContent = payload.presence === 'oui'
-        ? `Super, merci ${payload.nom} ! On a hâte de te voir 💕🎈`
-        : `Merci ${payload.nom}, on pensera à toi 😢💌`;
+        ? `Super, merci ${payload.nom} ! On a hâte de te voir 💜`
+        : `Merci ${payload.nom}, on pensera à toi 💜`;
       if (payload.presence === 'oui') burst(40);
     } catch (err) {
       errorEl.textContent = "Oups, l'envoi n'a pas marché. Réessaie dans un instant.";
       submit.disabled = false;
-      submit.textContent = 'Envoyer 💌';
+      submit.textContent = 'Envoyer ma réponse';
     }
   });
 }
