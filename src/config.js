@@ -12,7 +12,7 @@ export const BIRTHDAY_CONFIG = {
 
   // Date et heure cibles du compte à rebours.
   // Format : "AAAA-MM-JJTHH:MM:SS+01:00"  (+01:00 = heure du Bénin)
-  targetDate: "2026-12-31T15:00:00+01:00",
+  targetDate: "2026-10-31T16:00:00+01:00",
 
   // Écran d'introduction : le décret royal scellé
   intro: {
@@ -22,9 +22,11 @@ export const BIRTHDAY_CONFIG = {
 
   // Hero
   hero: {
-    title: "SHEYI",
-    subtitle: "Princesse et agent secrète, elle a 1 an !",
-    text: "Sa Majesté fête sa première année et a besoin de vous. Mission : la fêter comme il se doit."
+    title: "LAMAS SHEYI",
+    subtitle: "a 1 an !",
+    text: `La princesse fête sa première année et a besoin de vous. 
+Chaque sujet est convoqué pour le couronnement.
+Venez avec votre sourire, votre bonne humeur et votre appétit pour le gâteau royal.`
   },
 
   // Bandeau défilant sous le hero
@@ -39,21 +41,21 @@ export const BIRTHDAY_CONFIG = {
 
   // Informations de la mission
   event: {
-    date: "Date à définir",
-    time: "15h00",
-    location: "Lieu à définir",
-    address: "Adresse à définir",
-    mapUrl: "" // ex. "https://maps.google.com/?q=..." — vide = bouton masqué
+    date: "06/11/2026",
+    time: "16h00",
+    location: "Bénin Abomey-Calavi, Djadjo Von du poulailler, non loin du bar Chez Arès.",
+    address: "--",
+    mapUrl: "https://maps.app.goo.gl/U16m1VsmZBRx2yqD6?g_st=aw"  // ex. "https://maps.google.com/?q=..." — vide = bouton masqué
   },
 
   // Fiche de la princesse agent
   agent: {
-    name: "Sheyi",
-    codename: "Étoile de la cour",
+    name: "LAMAS Sheyi Svetlana Anadelia",
+    codename: "Princesse de la cour",
     age: "1 an",
     specialty: "Faire fondre les cœurs d'un seul sourire",
-    power: "Transformer n'importe quelle pièce en palais",
-    photo: "/assets/photos/photo1.jpg" // photo de Sheyi (public/assets/photos/)
+    power: `Transformer n'importe quelle pièce en palais (Casse tout "visage souriant avec une main sur la boucje" )`,
+    photo: "/assets/photos/princesse1.jpeg" // photo de Sheyi (public/assets/photos/)
   },
 
   // Évaluation de la princesse (barres animées, de 0 à 100)
@@ -61,7 +63,7 @@ export const BIRTHDAY_CONFIG = {
     { label: "Charme royal", value: 100 },
     { label: "Gentillesse", value: 100 },
     { label: "Amour du gâteau", value: 100 },
-    { label: "Malice douce", value: 85 },
+    { label: "Douce", value: 85 },
     { label: "Excitation", value: 100 }
   ],
 
@@ -78,7 +80,7 @@ export const BIRTHDAY_CONFIG = {
     text: "Chaque sujet doit pouvoir rire, manger, danser et repartir avec un souvenir royal.",
     bullets: [
       "Un protocole royal, mais sans raideur",
-      "Un palais lavande, blanc et doré",
+      "Un palais lavande, blanc et rosé",
       "Un banquet digne d'une princesse"
     ]
   },
@@ -98,21 +100,21 @@ export const BIRTHDAY_CONFIG = {
   story: {
     title: "Une année de règne... la toute première fois.",
     text: "Ce premier anniversaire ne se répète qu'une fois. Viens y prendre part : une fête pleine de douceur, de rires et de souvenirs.",
-    image: "/assets/photos/photo2.jpg" // photo principale (public/assets/photos/)
+    image: "/assets/photos/princesse5.jpeg" // photo principale (public/assets/photos/)
   },
 
-  // Protocole de la journée (programme)
+  // Programme de la journée (programme)
   programme: {
-    title: "🕐 Protocole de la journée",
+    title: "🕐 Prohgramme de la journée",
     intro: "Chaque étape est un acte du couronnement. Suivez le protocole, sujets.",
     items: [
-      { time: "15:00", title: "ACTE I · Arrivée des sujets", text: "Accueil de la cour, on se salue autour d'un petit verre." },
-      { time: "15:30", title: "ACTE II · La parade photo", text: "Un décor lavande et doré pour les premiers portraits royaux." },
-      { time: "16:00", title: "ACTE III · Jeux de cour", text: "Des jeux pour les petits comme pour les grands, à la gloire de Sheyi." },
-      { time: "16:45", title: "ACTE IV · Le gâteau royal", text: "Le moment le plus attendu : le chant et la première bougie." },
-      { time: "17:15", title: "ACTE V · Le banquet", text: "Un buffet sucré et salé digne d'un palais, pour toute la cour." },
-      { time: "18:00", title: "ACTE VI · Les archives", text: "On revoit ensemble les plus beaux moments de la première année." },
-      { time: "18:30", title: "ACTE FINAL · La révérence", text: "Chaque sujet repart avec un petit présent du royaume." }
+      { title: "ACTE I · Arrivée des sujets", text: "Accueil de la cour, on se salue autour d'un petit verre." },
+      { title: "ACTE II · La parade photo", text: "Un décor lavande et doré pour les premiers portraits royaux." },
+      { title: "ACTE III · Le banquet", text: "Un buffet sucré et salé digne d'un palais, pour toute la cour." },
+      { title: "ACTE IV · Jeux de cour", text: "Des jeux pour les petits comme pour les grands, à la gloire de Sheyi." },
+      { title: "ACTE V · Le gâteau royal", text: "Le moment le plus attendu : le chant et la première bougie." },
+      { title: "ACTE VI · L'ambiance Royal", text: "On revoit ensemble les plus beaux moments de la première année." },
+      { title: "ACTE FINAL · La révérence", text: "Chaque sujet repart avec un petit présent du royaume." }
     ]
   },
 
@@ -128,45 +130,11 @@ export const BIRTHDAY_CONFIG = {
     reward: "Secret du royaume : le gâteau est déjà commandé 🎂"
   },
 
-  // Proclamations de la cour (citations)
-  quotes: {
-    title: "📜 Proclamations de la cour",
-    items: [
-      "« Sa Majesté exige beaucoup de gâteau. »",
-      "« Hmmm... cette fête mérite un tapis doré. »",
-      "« Qu'on prépare le palais. Et le gâteau. »",
-      "« Beaucoup, beaucoup de gâteau. »"
-    ]
-  },
-
-  // Le banquet (cartes avec illustration)
-  menu: {
-    title: "🍰 Banquet royal",
-    intro: "Des douceurs dignes d'un palais, pour toute la cour.",
-    items: [
-      { image: "/assets/photos/photo4.jpg", title: "Gâteau du couronnement", text: "Le grand gâteau de la première année, paré de dorures." },
-      { image: "/assets/photos/photo5.jpg", title: "Bouchées de la cour", text: "Cacahuètes et petites bouchées salées pour tenir la mission." },
-      { image: "/assets/photos/photo6.jpg", title: "Douceurs du palais", text: "Biscuits, cupcakes et petites surprises sucrées." },
-      { image: "/assets/photos/photo7.jpg", title: "Breuvages dorés", text: "Jus, eau et boissons sans alcool pour trinquer à la princesse." }
-    ]
-  },
-
-  // Divertissements de cour (cartes avec illustration)
-  activities: {
-    title: "🧸 Divertissements de cour",
-    intro: "De quoi s'amuser à tout âge.",
-    items: [
-      { image: "/assets/photos/photo8.jpg", title: "Coin des petits princes", text: "Un espace calme avec jouets doux et coussins pour les plus jeunes." },
-      { image: "/assets/photos/photo9.jpg", title: "Chasse aux trésors", text: "Des indices cachés dans la maison : qui trouvera le trésor en premier ?" },
-      { image: "/assets/photos/photo10.jpg", title: "Jeux de société", text: "Des jeux simples que chacun peut rejoindre, sans règles compliquées." },
-      { image: "/assets/photos/photo11.jpg", title: "Photo royale", text: "Couronnes, accessoires et décor doré pour des portraits dignes du royaume." }
-    ]
-  },
 
   // Tenue de cour
   dresscode: {
-    title: "👗 Tenue de cour",
-    text: "Venez en lavande, en blanc ou en or : tout le royaume doit briller, sans obligation.",
+    title: "Dress Code",
+    text: "Venez en tenue de couleur blanche ou beige ou lavande ou rose : tout le royaume doit briller, sans obligation.",
     colors: [
       { name: "Lavande", hex: "#B49BE3" },
       { name: "Blanc", hex: "#FFFFFF" },
@@ -176,30 +144,24 @@ export const BIRTHDAY_CONFIG = {
     ]
   },
 
-  // Points forts (3 cartes)
-  features: [
-    { icon: "palette", title: "Décor de palais", text: "Des couleurs et des détails dignes d'une princesse." },
-    { icon: "compass", title: "Protocole clair", text: "Un programme simple, avec les horaires à portée de main." },
-    { icon: "smile", title: "Cour chaleureuse", text: "Une fête où chacun se sent accueilli, petits et grands." }
-  ],
 
   // Archives (galerie)
   photos: [
-    { src: "/assets/photos/photo13.jpg", caption: "Souvenir n°13" },
-    { src: "/assets/photos/photo14.jpg", caption: "Souvenir n°14" },
-    { src: "/assets/photos/photo15.jpg", caption: "Souvenir n°15" },
-    { src: "/assets/photos/photo16.jpg", caption: "Souvenir n°16" },
-    { src: "/assets/photos/photo17.jpg", caption: "Souvenir n°17" },
-    { src: "/assets/photos/photo18.jpg", caption: "Souvenir n°18" }
+    { src: "/assets/photos/princesse1.jpeg", caption: "Souvenir n°13" },
+    { src: "/assets/photos/princesse2.jpeg", caption: "Souvenir n°14" },
+    { src: "/assets/photos/princesse3.jpeg", caption: "Souvenir n°15" },
+    { src: "/assets/photos/princesse4.jpeg", caption: "Souvenir n°16" },
+    { src: "/assets/photos/princesse5.jpeg", caption: "Souvenir n°17" },
+    { src: "/assets/photos/princesse6.jpeg", caption: "Souvenir n°18" }
   ],
 
   // Moments (bande de trois photos, entre l'histoire et le compte à rebours)
   moments: {
     title: "🌟 Trois moments à garder",
     items: [
-      { src: "/assets/photos/photo19.jpg", caption: "Moment n°1" },
-      { src: "/assets/photos/photo20.jpg", caption: "Moment n°2" },
-      { src: "/assets/photos/photo21.jpg", caption: "Moment n°3" }
+      { src: "/assets/photos/princesse1.jpeg", caption: "Moment n°1" },
+      { src: "/assets/photos/princesse3.jpeg", caption: "Moment n°2" },
+      { src: "/assets/photos/princesse5.jpeg", caption: "Moment n°3" }
     ]
   },
 
@@ -235,7 +197,7 @@ export const BIRTHDAY_CONFIG = {
   puzzle: {
     title: "🧩 Le puzzle royal",
     intro: "Remettez la photo dans l'ordre. Un seul morceau bouge à la fois, en le faisant glisser vers la case vide.",
-    image: "/assets/photos/photo22.jpg",
+    image: "/assets/photos/princesse5.jpeg",
     win: "Puzzle terminé ! La princesse vous remercie. 👑"
   },
 
@@ -290,7 +252,7 @@ export const BIRTHDAY_CONFIG = {
     text: "Cher sujet, confirmez-vous votre présence au couronnement ?",
     // Pour recevoir les réponses : crée un formulaire gratuit sur https://formspree.io
     // et colle ici son URL (ex. "https://formspree.io/f/xxxxxxxx").
-    endpoint: ""
+    endpoint: "https://formspree.io/f/mljgbqdz"
   },
 
   // Titres des sections

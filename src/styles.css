@@ -499,7 +499,7 @@ body.site-on .float-layer { opacity: 0.6; }
   animation: floatY 7s ease-in-out infinite;
 }
 .chip.c1 { left: -2%; top: 14%; }
-.chip.c2 { right: -4%; top: 52%; animation-delay: -2s; }
+.chip.c2 { right: -4%; top: 66%; animation-delay: -2s; }
 .chip.c3 { left: 6%; bottom: 4%; animation-delay: -4s; }
 .scroll-hint {
   align-self: center;
@@ -2289,4 +2289,21 @@ img, svg, video, iframe { max-width: 100%; }
 @media (min-width: 900px) {
   .game-section.align-left .game-solo { transform: rotate(-1deg); }
   .game-section.align-right .game-solo { transform: rotate(1deg); }
+}
+
+
+/* Performance : on retire les flous coûteux */
+.info-card,
+.card,
+.rsvp-card,
+.game-card,
+.gate {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.gate { background: rgba(241, 235, 253, 0.96); }
+
+@media (max-width: 640px) {
+  .float-layer .heart,
+  .float-layer .star { display: none; }
 }
