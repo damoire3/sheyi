@@ -11,13 +11,17 @@
   --lav-500: #9677D1;
   --lav-700: #5B3F94;
   --ink: #3E2C63;
-  --red: #9677D1;
-  --red-dark: #5B3F94;
+  --red: #D95F8D;
+  --red-dark: #B8457A;
+  --beige: #F3E7D8;
+  --beige-soft: #FBF4EB;
   --black: #3E2C63;
   --ink-soft: #6E5E8C;
-  --gold: #C9A227;
-  --gold-light: #EBD38A;
-  --gold-soft: #F7EDCB;
+  /* Le « gold » est maintenant ROSÉ (on garde les noms de variables) */
+  --gold: #DE6B97;
+  --gold-light: #F4B1CA;
+  --gold-soft: #FCE6EF;
+  --rose-pale: #FFF0F6;
   --white: #FFFFFF;
 
   --font-title: 'Fredoka', system-ui, sans-serif;
@@ -25,7 +29,7 @@
   --font-script: 'Caveat', cursive;
 
   --shadow-soft: 0 18px 40px rgba(91, 63, 148, 0.14);
-  --shadow-gold: 0 14px 30px rgba(201, 162, 39, 0.28);
+  --shadow-gold: 0 14px 30px rgba(222, 107, 151, 0.28);
   --radius-lg: 28px;
 }
 
@@ -109,7 +113,7 @@ body.site-on .float-layer { opacity: 0.6; }
   line-height: 1;
   animation: twinkle 3.2s ease-in-out infinite;
   animation-delay: var(--delay);
-  text-shadow: 0 0 10px rgba(235, 211, 138, 0.8);
+  text-shadow: 0 0 10px rgba(244, 177, 202, 0.8);
 }
 
 @keyframes rise {
@@ -443,7 +447,7 @@ body.site-on .float-layer { opacity: 0.6; }
   aspect-ratio: 1;
   right: 4%;
   bottom: 8%;
-  background: radial-gradient(circle at 30% 30%, #FFF6D6, var(--gold-light) 60%, var(--gold) 100%);
+  background: radial-gradient(circle at 30% 30%, var(--rose-pale), var(--gold-light) 60%, var(--gold) 100%);
   box-shadow: var(--shadow-gold);
   animation: floatY 6s ease-in-out infinite;
 }
@@ -469,7 +473,7 @@ body.site-on .float-layer { opacity: 0.6; }
   position: absolute;
   inset: -12px;
   border-radius: 50%;
-  border: 2px dashed rgba(201, 162, 39, 0.5);
+  border: 2px dashed rgba(222, 107, 151, 0.5);
   animation: spin 24s linear infinite;
 }
 .age-num {
@@ -946,7 +950,7 @@ body.site-on .float-layer { opacity: 0.6; }
 .field textarea:focus {
   outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.18);
+  box-shadow: 0 0 0 4px rgba(222, 107, 151, 0.18);
 }
 .radio-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .radio-pill { position: relative; cursor: pointer; flex: 1 1 160px; }
@@ -1294,7 +1298,7 @@ body.has-cursor .cursor-ring { display: block; }
   height: 66px;
   margin: -33px 0 0 -33px;
   border-color: var(--gold);
-  background: rgba(201, 162, 39, 0.12);
+  background: rgba(222, 107, 151, 0.12);
 }
 
 /* Dans un champ de saisie : curseur texte natif, pas de cercle */
@@ -1578,8 +1582,10 @@ img, svg, video, iframe { max-width: 100%; }
 }
 .agent-head {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   gap: 10px;
   border-bottom: 2px dashed rgba(62, 44, 99, 0.25);
   padding-bottom: 12px;
@@ -1587,8 +1593,9 @@ img, svg, video, iframe { max-width: 100%; }
 }
 .agent-number {
   font-family: var(--font-title);
-  font-size: 0.8rem;
+  font-size: 1.05rem;
   letter-spacing: 0.15em;
+  text-align: center;
   color: var(--ink-soft);
 }
 .agent-body {
@@ -1776,7 +1783,7 @@ img, svg, video, iframe { max-width: 100%; }
 
 /* Respiration sur grand écran */
 @media (min-width: 900px) {
-  .agent-grid { grid-template-columns: 1.4fr 1fr; gap: 40px; }
+  .agent-grid { grid-template-columns: minmax(0, 760px); justify-content: center; gap: 40px; }
   .agent-body { grid-template-columns: 220px 1fr; }
   .quiz-options { grid-template-columns: 1fr 1fr; }
 }
@@ -1840,21 +1847,21 @@ img, svg, video, iframe { max-width: 100%; }
 /* ==========================================================================
    PHOTOS DANS LES SECTIONS (cartes, hero, présents, moments)
    ========================================================================== */
-.card-visual img[src$=".jpg"] {
+.card-visual img[src*=".jp"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .card-visual { border: 2px solid var(--white); box-shadow: var(--shadow-soft); }
 
-.blob-img[src$=".jpg"] {
+.blob-img[src*=".jp"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: inherit;
 }
 
-.gifts-img[src$=".jpg"] {
+.gifts-img[src*=".jp"] {
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -1863,7 +1870,7 @@ img, svg, video, iframe { max-width: 100%; }
   box-shadow: var(--shadow-soft), 0 0 0 2px var(--gold-light);
 }
 
-.hero-dossier[src$=".jpg"] {
+.hero-dossier[src*=".jp"] {
   position: absolute;
   left: 14%;
   top: 6%;
@@ -2032,7 +2039,7 @@ img, svg, video, iframe { max-width: 100%; }
 .mem-card.is-open .mem-back { transform: rotateY(180deg); }
 .mem-card.is-open .mem-front { transform: rotateY(0deg); }
 .mem-card.is-matched .mem-front {
-  background: linear-gradient(135deg, #FFF6D6, var(--gold-light));
+  background: linear-gradient(135deg, var(--rose-pale), var(--gold-light));
   border-color: var(--gold);
 }
 .mem-card:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 14px; }
@@ -2157,7 +2164,7 @@ img, svg, video, iframe { max-width: 100%; }
   color: var(--ink-soft);
 }
 .gift-box.is-open {
-  background: linear-gradient(135deg, #FFF6D6, var(--gold-light));
+  background: linear-gradient(135deg, var(--rose-pale), var(--gold-light));
   border-color: var(--gold);
   color: var(--lav-700);
   animation: giftPop 0.5s ease;
@@ -2241,7 +2248,7 @@ img, svg, video, iframe { max-width: 100%; }
   min-height: 56px;
   width: 100%;
 }
-.gate-form input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.2); }
+.gate-form input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(222, 107, 151, 0.2); }
 .gate-msg {
   min-height: 1.4em;
   font-family: var(--font-title);
@@ -2307,3 +2314,148 @@ img, svg, video, iframe { max-width: 100%; }
   .float-layer .heart,
   .float-layer .star { display: none; }
 }
+
+/* ==========================================================================
+   PROGRAMME COMPLET : un « acte » par carte, tous affichés
+   ========================================================================== */
+.programme-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.acte-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  background: var(--white);
+  border: 2px solid var(--lav-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 26px 22px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.acte-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+.acte-label {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--gold), #C2507E);
+  padding: 6px 16px;
+  border-radius: 999px;
+  box-shadow: 0 8px 16px rgba(222, 107, 151, 0.28);
+}
+.acte-card h3 {
+  font-size: clamp(1.15rem, 4vw, 1.35rem);
+  color: var(--ink);
+}
+.acte-card p {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  max-width: 38ch;
+}
+/* L'acte final est mis en avant, sur toute la largeur */
+.acte-card.is-final {
+  border-color: var(--gold);
+  background: linear-gradient(160deg, var(--white), var(--gold-soft));
+}
+
+@media (min-width: 640px) {
+  .programme-grid { grid-template-columns: repeat(2, 1fr); }
+  .acte-card.is-final { grid-column: 1 / -1; }
+}
+@media (min-width: 900px) {
+  .programme-grid { grid-template-columns: repeat(3, 1fr); }
+  .acte-card.is-final { grid-column: 1 / -1; }
+}
+
+
+/* ==========================================================================
+   THÈME FINAL : lavande, rose, blanc, beige
+   (placé en dernier pour l'emporter sur les règles précédentes)
+   ========================================================================== */
+
+/* Fond du site : lavande -> rose -> beige */
+body {
+  background: linear-gradient(180deg, var(--lav-50) 0%, var(--lav-100) 28%, #FCE9F1 62%, #F8EFE4 100%);
+  background-attachment: fixed;
+}
+
+/* Enveloppe ROSE */
+.env-back {
+  background: linear-gradient(180deg, #FAC9DC, #EC86AB);
+  border: 3px solid var(--white);
+  box-shadow: 0 22px 40px rgba(222, 107, 151, 0.38);
+}
+.env-front {
+  background: linear-gradient(160deg, #F8B9D0, #E26A96);
+}
+.env-flap {
+  background: linear-gradient(160deg, #FDD9E7, #EE8FB2);
+}
+.letter {
+  background: var(--beige-soft);
+  border: 2px solid var(--gold-light);
+}
+.seal {
+  background: var(--white);
+  border: 3px solid var(--red);
+  color: var(--red);
+}
+
+/* Boule du hero : rose vers lavande */
+.orb-1 {
+  background: radial-gradient(circle at 30% 30%, #FFFFFF 0%, #F9D3E3 45%, var(--lav-300) 100%);
+}
+.chip { border-color: var(--gold-light); }
+.chip-icon { color: var(--red); }
+
+/* Cartes beiges (au lieu du crème jaune) */
+.agent-card,
+.quiz-card,
+.riddle-card,
+.game-card,
+.gate-card {
+  background: var(--beige-soft);
+}
+.game-card { border-color: var(--gold-light); }
+.gate { background: rgba(250, 238, 246, 0.96); }
+
+/* Cartes d'infos et programme : bordures roses, alternance blanc / beige */
+.info-card { border-color: var(--gold-light); }
+.acte-card { border-color: var(--gold-light); }
+.acte-card:nth-child(even) { background: var(--beige-soft); }
+.acte-card.is-final { background: linear-gradient(160deg, var(--white), var(--gold-soft)); }
+
+/* Mots, partenaires, polaroïds */
+.word { border-color: var(--gold-light); }
+.partner-pill { border-color: var(--gold-light); background: var(--rose-pale); }
+.polaroid { border-color: var(--gold-light); }
+
+/* Dress code : pastilles bordées de rose */
+.swatch-dot { box-shadow: var(--shadow-soft), 0 0 0 2px var(--gold-light); }
+
+/* Boutons secondaires et séparateurs */
+.btn-ghost { border-color: var(--gold-light); background: var(--rose-pale); }
+.game-section + .game-section::before {
+  background: repeating-linear-gradient(90deg, var(--gold-light) 0 10px, transparent 10px 20px);
+}
+
+/* Bandeau défilant : lavande / rose */
+.marquee {
+  background: linear-gradient(90deg, var(--lav-500), var(--gold), var(--lav-500), var(--gold), var(--lav-500));
+  background-size: 200% 100%;
+}
+
+
+/* Section vidéo : masquée tant que son contenu reste commenté (réapparaît d'elle-même une fois décommentée) */
+.section-title:empty { display: none; }
+#video:not(:has(.video-frame)) { display: none; }

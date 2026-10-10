@@ -8,8 +8,8 @@ import { ICONS } from './icons.js';
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isSmall = window.innerWidth < 600;
 
-// Palette lavande, blanc, or
-const PALETTE = ['#B49BE3', '#D8C6F3', '#C9A227', '#EBD38A', '#FFFFFF', '#9677D1', '#E2D6F8'];
+// Palette lavande, blanc, rosé (les anciens ballons dorés sont maintenant roses)
+const PALETTE = ['#B49BE3', '#D8C6F3', '#E8789F', '#F4B1CA', '#FFFFFF', '#9677D1', '#E2D6F8'];
 
 // ---------- Utilitaires ----------
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -66,7 +66,7 @@ function createFloaters() {
     const h = document.createElement('span');
     h.className = 'heart';
     h.innerHTML = ICONS.crown;
-    h.style.color = pick(['#B49BE3', '#C9A227', '#D8C6F3']);
+    h.style.color = pick(['#B49BE3', '#E8789F', '#D8C6F3']);
     h.style.setProperty('--s', rand(16, 34) + 'px');
     h.style.setProperty('--dur', rand(12, 22) + 's');
     h.style.setProperty('--sway', rand(-40, 40) + 'px');
@@ -397,7 +397,7 @@ function renderMarquee() {
 function renderWords() {
   const cloud = $('#wordsCloud');
   if (!cloud) return;
-  const colors = ['#5B3F94', '#9677D1', '#C9A227', '#7A5CC0', '#B08D1E', '#3B2A5C'];
+  const colors = ['#5B3F94', '#9677D1', '#DE6B97', '#7A5CC0', '#C2507E', '#3B2A5C'];
   cloud.innerHTML = (C.words || []).map((w, i) => `
     <span class="word reveal" style="--wc:${colors[i % colors.length]};--wd:${(i * 0.37 % 3 + 3).toFixed(2)}s;--wr:${i % 2 ? -4 : 3}deg">${esc(w)}</span>`
   ).join('');
@@ -419,18 +419,23 @@ function renderPartners() {
   el.innerHTML = (C.partners || []).map((p) => `<span class="partner-pill">${esc(p)}</span>`).join('');
 }
 
-function renderSchedule() {
-  const list = $('#schedule');
-  if (!list) return;
-  (C.programme?.items || []).forEach((item) => {
-    const li = document.createElement('li');
-    li.className = 'tl-item reveal';
-    li.innerHTML = `
-      <span class="tl-time">${esc(item.time)}</span>
-      <span class="tl-dot" aria-hidden="true"></span>
-      <div class="tl-body"><h3>${esc(item.title)}</h3><p>${esc(item.text)}</p></div>`;
-    list.appendChild(li);
-  });
+// Programme complet : un « acte » par carte, tous affichés (aucune coupure)
+function renderProgramme() {
+  const grid = $('#programmeGrid');
+  if (!grid) return;
+  const items = C.programme?.items || [];
+  grid.innerHTML = items.map((item, i) => {
+    // « ACTE I · Arrivée des sujets » -> étiquette « ACTE I » + titre « Arrivée des sujets »
+    const [label, ...rest] = String(item.title || '').split('·').map((s) => s.trim());
+    const name = rest.join(' · ');
+    const isFinal = i === items.length - 1;
+    return `
+    <article class="acte-card reveal${isFinal ? ' is-final' : ''}">
+      <span class="acte-label">${esc(label)}</span>
+      ${name ? `<h3>${esc(name)}</h3>` : ''}
+      <p>${esc(item.text)}</p>
+    </article>`;
+  }).join('');
 }
 
 function photoMarkup(src, caption, emptyLabel) {
@@ -1106,7 +1111,7 @@ renderWords();
 renderAboutBullets();
 renderVideo();
 renderStoryImage();
-renderSchedule();
+renderProgramme();
 renderMenu();
 renderActivities();
 renderSwatches();

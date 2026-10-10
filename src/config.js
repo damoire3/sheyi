@@ -12,7 +12,7 @@ export const BIRTHDAY_CONFIG = {
 
   // Date et heure cibles du compte à rebours.
   // Format : "AAAA-MM-JJTHH:MM:SS+01:00"  (+01:00 = heure du Bénin)
-  targetDate: "2026-10-31T16:00:00+01:00",
+  targetDate: "2026-11-06T16:00:00+01:00",
 
   // Écran d'introduction : le décret royal scellé
   intro: {
@@ -22,8 +22,8 @@ export const BIRTHDAY_CONFIG = {
 
   // Hero
   hero: {
-    title: "LAMAS SHEYI",
-    subtitle: "a 1 an !",
+    title: "SHEYI",
+    subtitle: "",
     text: `La princesse fête sa première année et a besoin de vous. 
 Chaque sujet est convoqué pour le couronnement.
 Venez avec votre sourire, votre bonne humeur et votre appétit pour le gâteau royal.`
@@ -58,14 +58,14 @@ Venez avec votre sourire, votre bonne humeur et votre appétit pour le gâteau r
     photo: "/assets/photos/princesse1.jpeg" // photo de Sheyi (public/assets/photos/)
   },
 
-  // Évaluation de la princesse (barres animées, de 0 à 100)
-  agentStats: [
-    { label: "Charme royal", value: 100 },
-    { label: "Gentillesse", value: 100 },
-    { label: "Amour du gâteau", value: 90 },
-    { label: "Douce", value: 75 },
-    { label: "Excitation", value: 100 }
-  ],
+  // // Évaluation de la princesse (barres animées, de 0 à 100)
+  // agentStats: [
+  //   { label: "Charme royal", value: 100 },
+  //   { label: "Gentillesse", value: 100 },
+  //   { label: "Amour du gâteau", value: 90 },
+  //   { label: "Douce", value: 75 },
+  //   { label: "Excitation", value: 100 }
+  // ],
 
   // Une année en mots (nuage de mots)
   words: [
@@ -88,13 +88,13 @@ Venez avec votre sourire, votre bonne humeur et votre appétit pour le gâteau r
   // Vidéo (section dédiée)
   // - Fichier local : public/assets/video/mon-film.mp4 puis src: "/assets/video/mon-film.mp4"
   // - OU un lien YouTube/Vimeo : embedUrl: "https://www.youtube.com/embed/XXXXXXX"
-  video: {
-    title: "🎬 Les archives du royaume",
-    caption: "Quelques séquences à revoir après le couronnement.",
-    src: "/assets/video/video-sheyi.mp4",
-    embedUrl: "",
-    poster: ""
-  },
+  // video: {
+  //   title: " Les archives du royaume",
+  //   caption: "Quelques séquences à revoir après le couronnement.",
+  //   src: "/assets/video/video-sheyi.mp4",
+  //   embedUrl: "",
+  //   poster: ""
+  // },
 
   // Section « Une journée spéciale »
   story: {
@@ -105,11 +105,11 @@ Venez avec votre sourire, votre bonne humeur et votre appétit pour le gâteau r
 
   // Programme de la journée (programme)
   programme: {
-    title: "🕐 Prohgramme de la journée",
+    title: "🕐 Programme de la journée",
     intro: "Chaque étape est un acte du couronnement. Suivez le protocole, sujets.",
     items: [
       { title: "ACTE I · Arrivée des sujets", text: "Accueil de la cour, on se salue autour d'un petit verre." },
-      { title: "ACTE II · La parade photo", text: "Un décor lavande et doré pour les premiers portraits royaux." },
+      { title: "ACTE II · La parade photo", text: "Un décor lavande et rosé pour les premiers portraits royaux." },
       { title: "ACTE III · Le banquet", text: "Un buffet sucré et salé digne d'un palais, pour toute la cour." },
       { title: "ACTE IV · Jeux de cour", text: "Des jeux pour les petits comme pour les grands, à la gloire de Sheyi." },
       { title: "ACTE V · Le gâteau royal", text: "Le moment le plus attendu : le chant et la première bougie." },
@@ -138,9 +138,9 @@ Venez avec votre sourire, votre bonne humeur et votre appétit pour le gâteau r
     colors: [
       { name: "Lavande", hex: "#B49BE3" },
       { name: "Blanc", hex: "#FFFFFF" },
-      { name: "Or", hex: "#C9A227" },
+      { name: "Rose", hex: "#F2A0BE" },
       { name: "Violet royal", hex: "#5B3F94" },
-      { name: "Beige", hex: "#f9eab8" }
+      { name: "Beige", hex: "#E9D9C4" }
     ]
   },
 
@@ -159,9 +159,9 @@ Venez avec votre sourire, votre bonne humeur et votre appétit pour le gâteau r
   moments: {
     title: "🌟 Trois moments à garder",
     items: [
-      { src: "/assets/photos/princesse1.jpeg", caption: "Moment n°1" },
-      { src: "/assets/photos/princesse3.jpeg", caption: "Moment n°2" },
-      { src: "/assets/photos/princesse5.jpeg", caption: "Moment n°3" }
+      { src: "/assets/photos/princesse7.jpeg", caption: "Moment n°1" },
+      { src: "/assets/photos/princesse8.jpeg", caption: "Moment n°2" },
+      { src: "/assets/photos/princesse9.jpeg", caption: "Moment n°3" }
     ]
   },
 
